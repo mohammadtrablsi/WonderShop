@@ -18,14 +18,16 @@ class PageInOnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SizedBox(height: 15.h),
-        OnBoardingImage(image: image, height: heightOfImage),
-        SizedBox(height: 10.h),
-        OnBoardingText(text: text),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(height: 15.h),
+          OnBoardingImage(image: image, height: heightOfImage),
+          SizedBox(height: 10.h),
+          OnBoardingText(text: text),
+        ],
+      ),
     );
   }
 }

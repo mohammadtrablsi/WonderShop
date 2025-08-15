@@ -4,7 +4,6 @@ import 'package:wonder_shop/Features/search/presentation/views/search_view.dart'
 import 'package:go_router/go_router.dart';
 
 import '../../Features/Splash/presentation/views/splashView.dart';
-import '../../Features/login/presentation/views/login_view.dart';
 import '../../Features/onBoarding/presention/views/onBoarding.dart';
 
 abstract class AppRouter {

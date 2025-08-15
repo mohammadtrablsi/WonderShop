@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wonder_shop/Features/auth/presentation/views/loginView.dart';
 import 'package:wonder_shop/Features/onBoarding/presention/views/widgets/pageInOnBoarding.dart';
 
+import '../../../../auth/presentation/views/widgets/loginDialog.dart';
 import '../../../data/onBoardingData.dart';
 import '../../manger/onBoardingCubit.dart';
 import '../../manger/onBoardingState.dart';
@@ -27,6 +29,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
 
   @override
   Widget build(BuildContext context) {
+    final onBoardingCubit = context.read<OnBoardingCubit>();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Directionality(
@@ -65,16 +68,16 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                 SizedBox(height: 7.h),
                 OnBoardingButtonsPart(
                   text: 'استمر',
-                  transport: () {
+                  transport: () async {
                     if (state.index == 2) {
-                      // AppRouter.router.push(AppRouter.kLoginRoute);
+                      onBoardingCubit.navigateToLogin(context);
                     } else {
                       context.read<OnBoardingCubit>().nextPage();
                     }
                   },
                   index: state.index,
                   goToRegister: () {
-                    // AppRouter.router.push(AppRouter.kLoginRoute);
+                    onBoardingCubit.navigateToLogin(context);
                   },
                   skip: () {
                     context.read<OnBoardingCubit>().skipToLastPage();

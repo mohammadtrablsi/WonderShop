@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 abstract class Styles {
   static Color mainColor = const Color(0xFFc7164f);
   static Color customWhite =  Colors.white;
+  static Color customGrey =  Colors.grey;
+  static Color customLightGrey =  const Color(0xFFf4f4f4);
 
 
   static const textStyle18 = TextStyle(
