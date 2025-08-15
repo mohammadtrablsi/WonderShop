@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:wonder_shop/Features/auth/data/repos/loginRepoImpl.dart';
+import 'package:wonder_shop/Features/categories/data/dataSources/categoriesRemoteDataSource.dart';
+import 'package:wonder_shop/Features/categories/data/repos/categoriesRepoImp.dart';
 
 import '../../../Features/auth/data/dataSources/loginLocalDataSource.dart';
 import '../../../Features/home/data/data_sources/home_local_data_source.dart';
@@ -32,4 +34,9 @@ void setupServiceLocator() {
 
     ),
   );
+  getIt.registerSingleton<CategoriesRepoImpl>(
+      CategoriesRepoImpl(
+        categoriesRemoteDataSource:CategoriesRemoteDataSourceImpl(getIt.get<ApiService>(),),
+
+  ));
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 import 'package:wonder_shop/Features/auth/presentation/views/widgets/loginNumberTextFieldPart.dart';
+import 'package:wonder_shop/core/utils/app_router.dart';
 import 'package:wonder_shop/core/utils/functions/appToast.dart';
 
 import '../../../../../core/utils/assets.dart';
@@ -69,9 +71,11 @@ class LoginViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  listener: (context, state) {
+                  listener: (context, state) async {
                     if (state is LoginSuccess) {
-                      appToast(context, 'login successful');
+                            appToast(context, 'login successful');
+                            // Navigator.pop(context);
+                            context.go(AppRouter.kCategoriesView); // push replacement
                     } else if (state is LoginFailure) {
                       appToast(context, state.message);
                     }
