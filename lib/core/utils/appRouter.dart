@@ -1,4 +1,3 @@
-import 'package:wonder_shop/Features/categories/presention/views/categoriesView.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wonder_shop/Features/productDetails/presention/views/productDetailsView.dart';
 
@@ -8,7 +7,6 @@ import '../../Features/onBoarding/presention/views/onBoarding.dart';
 import '../../Features/products/presention/views/productsView.dart';
 
 abstract class AppRouter {
-  static const kBookDetailsView = '/bookDetailsView';
   static const kLogin = '/loginView';
   static const kOnBoardingView = '/onBoarding';
   static const kCategoriesView = '/categoriesView';
@@ -23,17 +21,11 @@ abstract class AppRouter {
         builder: (context, state) {
           final navigateHereAfterLogout =
           state.extra is bool ? state.extra as bool : false;
-
           return OnBoarding(
             isNavigateHereAfterLogout: navigateHereAfterLogout,
           );
         },
       ),
-
-      // GoRoute(
-      //   path: kCategoriesView,
-      //   builder: (context, state) => const CategoriesView(),
-      // ),
       GoRoute(
         path: kDrawerStackView,
         builder: (context, state) => DrawerStackView(),

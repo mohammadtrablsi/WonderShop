@@ -15,7 +15,7 @@ class LoginForgetPasswordButtonPart extends StatelessWidget {
           width: 2.w,
         ),
         LoginTextButton(
-            text: "forget you password?",
+            text: "forget your password?",
             onTap: () async {
             },
             fontSize: 14.2.sp),

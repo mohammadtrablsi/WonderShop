@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wonder_shop/Features/auth/presentation/manager/loginCubit.dart';
 import 'package:wonder_shop/Features/auth/presentation/views/widgets/loginNumberTextFieldPart.dart';
-import 'package:wonder_shop/core/utils/app_router.dart';
+import 'package:wonder_shop/core/utils/appRouter.dart';
 import 'package:wonder_shop/core/utils/functions/appToast.dart';
 
-import '../../../../../core/utils/assets.dart';
-import '../../manger/login_cubit/PasswordVisibilityCubit.dart';
-import '../../manger/login_cubit/loginCubit.dart';
-import '../../manger/login_cubit/loginState.dart';
+
+import '../../manager/PasswordVisibilityCubit.dart';
+import '../../manager/loginState.dart';
 import 'LoginButton.dart';
 import 'loginDivider.dart';
 import 'loginSubTitle.dart';
@@ -19,14 +19,26 @@ import 'loginForgetPasswordButtonPart.dart';
 import 'loginGoToRegisterButtonPart.dart';
 import 'loginPasswordTextFieldPart.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
+
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  @override
+  void dispose() {
+    phoneController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     LoginCubit loginCubit = context.read<LoginCubit>();
-    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    TextEditingController phoneController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
     return SingleChildScrollView(
       padding: EdgeInsets.zero,
       child: Column(

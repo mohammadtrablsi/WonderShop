@@ -1,4 +1,3 @@
-// features/categories/presentation/cubit/categories_state.dart
 part of 'categoriesCubit.dart';
 
 

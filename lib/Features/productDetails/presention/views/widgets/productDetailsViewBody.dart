@@ -5,8 +5,8 @@ import 'package:wonder_shop/Features/productDetails/presention/views/widgets/pro
 import 'package:wonder_shop/core/utils/styles.dart';
 
 import '../../../../../core/utils/functions/lottieStatusRequest.dart';
-import '../manger/prodcutDetailsState.dart';
-import '../manger/productDetailsCubit.dart';
+import '../../manager/prodcutDetailsState.dart';
+import '../../manager/productDetailsCubit.dart';
 import 'ProductDetailsBottomBar.dart';
 
 class ProductDetailsViewBody extends StatelessWidget {

@@ -27,7 +27,7 @@ appAlert(BuildContext context, String text, void Function()? onPressed) {
               foregroundColor: Colors.red,
             ),
             onPressed: () {
-              Navigator.of(context).pop(); // Close the dialog
+              Navigator.of(context).pop();
             },
             child: const Text(
               'cancel',

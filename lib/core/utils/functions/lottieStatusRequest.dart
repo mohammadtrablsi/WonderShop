@@ -20,7 +20,7 @@ Widget lottieStatusRequest(StatusRequest statusRequest) {
       lottiePath = AssetsData.baseLottieUrl + '/empty.json';
       break;
     case StatusRequest.success:
-      return const SizedBox.shrink(); // no animation for success
+      return const SizedBox.shrink();
   }
 
   return SizedBox(

@@ -1,4 +1,4 @@
-import '../../../../core/utils/api_service.dart';
+import '../../../../core/utils/apiService.dart';
 import '../../domain/entites/productDetailsEntity.dart';
 import '../models/productDetailsModel.dart';
 

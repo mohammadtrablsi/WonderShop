@@ -1,4 +1,6 @@
-import '../../../domain/entites/productDetailsEntity.dart';
+
+
+import '../../domain/entites/productDetailsEntity.dart';
 
 abstract class ProductDetailsState {}
 

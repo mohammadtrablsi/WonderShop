@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wonder_shop/Features/products/presention/views/manger/prodcutsState.dart';
-import 'package:wonder_shop/Features/products/presention/views/manger/productsCubit.dart';
 import 'package:wonder_shop/Features/products/presention/views/widgets/productCard.dart';
-import 'package:wonder_shop/core/utils/app_router.dart';
+import 'package:wonder_shop/core/utils/appRouter.dart';
 
 import '../../../../../core/utils/functions/lottieStatusRequest.dart';
+import '../../manager/prodcutsState.dart';
+import '../../manager/productsCubit.dart';
 
 
 class ProductsViewBody extends StatelessWidget {

@@ -1,18 +1,15 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../../../core/utils/api_service.dart';
 import '../../domain/entities/userEntity.dart';
 
 abstract class LoginLocalDataSource {
   Future<void> seedUser();
-  // Future<void> saveUser(UserEntity user);
   Future<UserEntity?> getUser();
   Future<void> setLoggedIn(bool value);
   Future<bool> isLoggedIn();
 }
 
 class LoginLocalDataSourceImpl implements LoginLocalDataSource {
-  late final ApiService apiService;
-  LoginLocalDataSourceImpl(this.apiService);
+  LoginLocalDataSourceImpl();
   static const _keyPhone = "phone";
   static const _keyPassword = "password";
   static const _keyLoggedIn = "logged_in";
@@ -25,13 +22,6 @@ class LoginLocalDataSourceImpl implements LoginLocalDataSource {
       await prefs.setString(_keyPassword, "password123");
     }
   }
-
-  // @override
-  // Future<void> saveUser(UserEntity user) async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   await prefs.setString(_keyPhone, user.phone);
-  //   await prefs.setString(_keyPassword, user.password);
-  // }
 
   @override
   Future<UserEntity?> getUser() async {

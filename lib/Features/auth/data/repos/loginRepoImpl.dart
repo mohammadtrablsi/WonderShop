@@ -20,9 +20,6 @@ class LoginRepositoryImpl implements LoginRepo {
     return false;
   }
 
-  // @override
-  // Future<void> saveUser(UserEntity user) => localDataSource.saveUser(user);
-
   @override
   Future<UserEntity?> getUser() => localDataSource.getUser();
 

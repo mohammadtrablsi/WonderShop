@@ -42,10 +42,10 @@ class _DrawerStackState extends State<DrawerStackView> with SingleTickerProvider
   void toggleDrawer() {
     setState(() {
       if (isDrawerOpen) {
-        _controller.reverse(); // Reverse animation
+        _controller.reverse();
         isDrawerOpen = false;
       } else {
-        _controller.forward(); // Forward animation
+        _controller.forward();
         isDrawerOpen = true;
       }
     });
@@ -62,8 +62,6 @@ class _DrawerStackState extends State<DrawerStackView> with SingleTickerProvider
             double translationX = lerpDouble(0, ( -42.w ), _animation.value)!;
             double translationY = lerpDouble(0, ( 16.w ), _animation.value)!;
             double scale = lerpDouble(1.0, 0.85, _animation.value)!;
-
-            // Rotation degree value (smooth rotation from 0 to desired angle)
             double rotationDeg = lerpDouble(0, ( -15 ), _animation.value)!;
 
             return Transform(
@@ -71,7 +69,7 @@ class _DrawerStackState extends State<DrawerStackView> with SingleTickerProvider
               transform: Matrix4.identity()
                 ..translate(translationX, translationY)
                 ..scale(scale)
-                ..rotateZ(rotationDeg * pi / 180), // Apply the rotation in radians
+                ..rotateZ(rotationDeg * pi / 180),
               child: ClipRRect(
                 borderRadius: _animation.value == 0
                     ? BorderRadius.zero

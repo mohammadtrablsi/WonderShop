@@ -8,7 +8,6 @@ class LoginTextField extends StatelessWidget {
   LoginTextField({
     super.key,
     required this.controller,
-    // required this.label,
     this.vaildator,
     required this.obscureText,
     this.suffixIcon,
@@ -18,13 +17,12 @@ class LoginTextField extends StatelessWidget {
     required this.keyboardType,
   });
   final TextEditingController? controller;
-  // final String label;
   final String? Function(String?)? vaildator;
   final bool obscureText;
   final IconData? suffixIcon;
   final void Function()? suffixIconOnPressed;
   final String outerText;
-  bool haveSuffixIcon = false;
+  final bool haveSuffixIcon;
   final TextInputType keyboardType;
 
   @override

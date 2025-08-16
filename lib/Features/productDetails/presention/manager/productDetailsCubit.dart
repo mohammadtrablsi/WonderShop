@@ -1,7 +1,7 @@
-// presentation/cubit/product_details_cubit.dart
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wonder_shop/Features/productDetails/presention/views/manger/prodcutDetailsState.dart';
-import '../../../domain/useCases/viewProductDetailsUseCase.dart';
+import 'package:wonder_shop/Features/productDetails/presention/manager/prodcutDetailsState.dart';
+
+import '../../domain/useCases/viewProductDetailsUseCase.dart';
 
 class ProductDetailsCubit extends Cubit<ProductDetailsState> {
   final ViewProductDetailsUseCase useCase;

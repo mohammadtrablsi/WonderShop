@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wonder_shop/Features/products/domain/useCases/viewProductsUseCase.dart';
-import 'package:wonder_shop/Features/products/presention/views/manger/prodcutsState.dart';
+import 'package:wonder_shop/Features/products/presention/manager/prodcutsState.dart';
+
 
 class ProductsCubit extends Cubit<ProductsState> {
   final ViewProductsUseCase viewProductsUseCase;

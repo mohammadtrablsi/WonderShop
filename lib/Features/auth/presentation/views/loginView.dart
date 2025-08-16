@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wonder_shop/Features/auth/data/repos/loginRepoImpl.dart';
 import 'package:wonder_shop/Features/auth/presentation/views/widgets/loginViewBody.dart';
 
-import '../../../../core/utils/functions/setup_service_locator.dart';
-import '../manger/login_cubit/PasswordVisibilityCubit.dart';
-import '../manger/login_cubit/loginCubit.dart';
+import '../../../../core/utils/functions/setupServiceLocator.dart';
+import '../manager/PasswordVisibilityCubit.dart';
+import '../manager/loginCubit.dart';
+
+
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

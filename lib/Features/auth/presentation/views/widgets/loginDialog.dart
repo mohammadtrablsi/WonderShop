@@ -3,8 +3,7 @@ import 'package:sizer/sizer.dart';
 
 void AuthDialog(
   BuildContext context,
-  Widget authScreen,
-  double heightOfDialog, {
+  Widget authScreen, {
   required ValueChanged onValue,
 }) {
   showGeneralDialog(
@@ -43,7 +42,7 @@ void AuthDialog(
                 child: IntrinsicHeight(
                   child: SingleChildScrollView(
                     child: Column(
-                      mainAxisSize: MainAxisSize.min, // Use min to wrap content
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         authScreen,
                         // const SizedBox(height: 16),
@@ -56,8 +55,6 @@ void AuthDialog(
                 offset: Offset(0, 2.h),
                 child: InkWell(
                   onTap: () {
-                    // authController.pageName = "login";
-                    // Get.delete<LoginController>();
                     Navigator.pop(context);
                   },
                   child: const CircleAvatar(

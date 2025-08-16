@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wonder_shop/Features/Splash/presentation/manger/splashCubit.dart';
 import 'package:wonder_shop/Features/Splash/presentation/views/widgets/splashViewBody.dart';
 import 'package:flutter/material.dart';
+
+import '../manager/splashCubit.dart';
 
 
 class SplashView extends StatelessWidget {

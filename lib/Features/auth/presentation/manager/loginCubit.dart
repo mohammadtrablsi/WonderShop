@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/repos/loginRepo.dart';
+import '../../domain/repos/loginRepo.dart';
 import 'loginState.dart';
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo repository;

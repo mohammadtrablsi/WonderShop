@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wonder_shop/Features/categories/presention/views/manger/categoriesCubit.dart';
-import 'package:wonder_shop/core/utils/app_router.dart';
+import 'package:wonder_shop/core/utils/appRouter.dart';
 
 import '../../../../../core/utils/functions/lottieStatusRequest.dart';
+import '../../manager/categoriesCubit.dart';
 import 'categoriesAppBar.dart';
 import 'categoriesList.dart';
 
@@ -38,8 +38,6 @@ class CategoriesViewBody extends StatelessWidget {
             CategoriesAppBar(title: 'WonderShop', openDrawerIcon:  isDrawerOpen?Icons.arrow_forward_ios : Icons.menu,onPressed:onPressed,),
 
             const SizedBox(height: 12),
-
-            // Categories List
             Expanded(
               child: BlocBuilder<CategoriesCubit, CategoriesState>(
                 builder: (context, state) {

@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/entites/categoriesEntity.dart';
-import '../../../domain/useCases/viewCategoriesUseCase.dart';
+import '../../domain/entites/categoriesEntity.dart';
+import '../../domain/useCases/viewCategoriesUseCase.dart';
+
 
 part 'categoriesState.dart';
 

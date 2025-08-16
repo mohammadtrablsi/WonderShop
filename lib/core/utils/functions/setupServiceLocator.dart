@@ -9,7 +9,7 @@ import 'package:wonder_shop/Features/products/data/dataSources/productsRemoteDat
 import 'package:wonder_shop/Features/products/data/repos/productsRepoImp.dart';
 
 import '../../../Features/auth/data/dataSources/loginLocalDataSource.dart';
-import '../api_service.dart';
+import '../apiService.dart';
 
 final getIt = GetIt.instance;
 
@@ -21,7 +21,7 @@ void setupServiceLocator() {
   );
   getIt.registerSingleton<LoginRepositoryImpl>(
     LoginRepositoryImpl(
-         localDataSource:LoginLocalDataSourceImpl(getIt.get<ApiService>(),)
+         localDataSource:LoginLocalDataSourceImpl()
 
     ),
   );

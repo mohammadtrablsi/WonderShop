@@ -8,39 +8,30 @@ class LoginButton extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
   final bool isLoading;
+  static const borderRadiusOfButton=BorderRadius.only(
+    topLeft: Radius.circular(8),
+    topRight: Radius.circular(25),
+    bottomRight: Radius.circular(25),
+    bottomLeft: Radius.circular(25),
+  );
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: isLoading ? () {} : onPressed,
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(8),
-        topRight: Radius.circular(25),
-        bottomRight: Radius.circular(25),
-        bottomLeft: Radius.circular(25),
-      ),
+      onTap: isLoading ? null: onPressed,
+      borderRadius: borderRadiusOfButton,
       child: Material(
-        elevation: 1, // Adjust elevation for shadow effect
-        shadowColor: Colors.black.withOpacity(1), // Shadow color
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(25),
-          bottomRight: Radius.circular(25),
-          bottomLeft: Radius.circular(25),
-        ),
+        elevation: 1,
+        shadowColor: Colors.black.withOpacity(1),
+        borderRadius: borderRadiusOfButton,
         color: Colors
-            .transparent, // Keep it transparent so Container color is visible
+            .transparent,
         child: Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(vertical: 2.2.h),
           decoration: BoxDecoration(
-            color: Styles.mainColor, //const Color(0xFFF77D8E)
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8),
-              topRight: Radius.circular(25),
-              bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25),
-            ),
+            color: Styles.mainColor,
+            borderRadius: borderRadiusOfButton
           ),
           child: isLoading
               ? Center(
@@ -55,13 +46,6 @@ class LoginButton extends StatelessWidget {
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                        // : Text(
-                        //     text,
-                        //     style: const TextStyle(
-                        //         color: Colors.white,
-                        //         fontWeight: FontWeight.w500),
-                        //   ),
                     Text(
                       text,
                       style:  TextStyle(
@@ -76,12 +60,6 @@ class LoginButton extends StatelessWidget {
                       color: Colors.white,
                       size: 18.sp,
                     ),
-
-                        // : Icon(
-                        //     Icons.arrow_right,
-                        //     color: Colors.white,
-                        //     size: 18.sp,
-                        //   ),
                   ],
                 ),
         ),

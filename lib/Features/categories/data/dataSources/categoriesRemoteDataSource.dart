@@ -1,7 +1,4 @@
-
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../../core/utils/api_service.dart';
+import '../../../../core/utils/apiService.dart';
 import '../../domain/entites/categoriesEntity.dart';
 import '../models/categoriesModel.dart';
 

@@ -1,4 +1,3 @@
-// data/models/categories_model.dart
 import '../../domain/entites/categoriesEntity.dart';
 
 class CategoriesModel extends CategoriesEntity {

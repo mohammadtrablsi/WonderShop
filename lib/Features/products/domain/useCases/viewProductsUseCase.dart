@@ -1,9 +1,8 @@
 
 import 'package:dartz/dartz.dart';
-import 'package:wonder_shop/core/use_cases/use_case.dart';
-
 
 import '../../../../core/errors/failure.dart';
+import '../../../../core/useCases/useCase.dart';
 import '../entites/productsEntity.dart';
 import '../repos/productsRepo.dart';
 

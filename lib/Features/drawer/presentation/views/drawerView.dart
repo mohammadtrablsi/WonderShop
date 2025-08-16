@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 import 'package:wonder_shop/Features/drawer/presentation/views/widgets/buttonInDrawer.dart';
 import 'package:wonder_shop/Features/drawer/presentation/views/widgets/rowInDrawer.dart';
-import 'package:wonder_shop/core/utils/app_router.dart';
+import 'package:wonder_shop/core/utils/appRouter.dart';
 import 'package:wonder_shop/core/utils/functions/appAlert.dart';
 import 'package:wonder_shop/core/utils/styles.dart';
 
@@ -17,47 +17,47 @@ class DrawerView extends StatefulWidget {
 }
 
 class _DrawerViewState extends State<DrawerView> {
+  int currentIndex=100;
+  List<Map> taps = [
+    {
+      'text': "Contact Us",
+      'icon': Icons.phone,
+      'color': Colors.white,
+      'route': null
+    },
+    {
+      'text': "Privacy Policy",
+      'icon': Icons.privacy_tip,
+      'color': Colors.white,
+      'route': null
+    },
+    {
+      'text': "Terms Of Service",
+      'icon': Icons.description,
+      'color': Colors.white,
+      'route': null
+    },
+    {
+      'text': "Languages",
+      'icon': Icons.translate,
+      'color': Colors.white,
+      'route': null
+    },
+    {
+      'text': "Invite Friends",
+      'icon': Icons.group_add,
+      'color': Colors.white,
+      'route': null
+    },
+    {
+      'text': "Logout",
+      'icon': Icons.logout,
+      'color': Colors.white,
+      'route': null
+    },
+  ];
   @override
   Widget build(BuildContext context) {
-    int currentIndex=100;
-    List<Map> taps = [
-      {
-        'text': "Contact Us",
-        'icon': Icons.phone,
-        'color': Colors.white,
-        'route': null
-      },
-      {
-        'text': "Privacy Policy",
-        'icon': Icons.privacy_tip,
-        'color': Colors.white,
-        'route': null
-      },
-      {
-        'text': "Terms Of Service",
-        'icon': Icons.description,
-        'color': Colors.white,
-        'route': null
-      },
-      {
-        'text': "Languages",
-        'icon': Icons.translate,
-        'color': Colors.white,
-        'route': null
-      },
-      {
-        'text': "Invite Friends",
-        'icon': Icons.group_add,
-        'color': Colors.white,
-        'route': null
-      },
-      {
-        'text': "Logout",
-        'icon': Icons.logout,
-        'color': Colors.white,
-        'route': null
-      },
-    ];
     return Scaffold(
       body: Directionality(
         textDirection: TextDirection.rtl,

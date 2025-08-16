@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wonder_shop/Features/products/presention/views/manger/prodcutsState.dart';
-import 'package:wonder_shop/Features/products/presention/views/manger/productsCubit.dart';
 import 'package:wonder_shop/Features/products/presention/views/widgets/productCard.dart';
 
 import '../../../../../core/utils/functions/lottieStatusRequest.dart';
+import '../../../../products/presention/manager/prodcutsState.dart';
+import '../../../../products/presention/manager/productsCubit.dart';
 
 
 class ProductsViewBody extends StatelessWidget {
@@ -69,7 +69,7 @@ class ProductsViewBody extends StatelessWidget {
               child: BlocBuilder<ProductsCubit, ProductsState>(
                 builder: (context, state) {
                   if (state is ProductsLoading) {
-                    return Center(child: lottieStatusRequest(StatusRequest.loading));;
+                    return Center(child: lottieStatusRequest(StatusRequest.loading));
                   } else if (state is ProductsLoaded) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),

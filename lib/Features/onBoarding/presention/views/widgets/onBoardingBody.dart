@@ -28,7 +28,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
 
     if (widget.isNavigateHereAfterLogout) {
       final cubit = context.read<OnBoardingCubit>();
-      cubit.navigateToLogin(context);
+      navigateToLogin(context);
       cubit.changePage(2);
     }
   }
@@ -75,17 +75,17 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                 text: 'استمر',
                 transport: () async {
                   if (state.index == 2) {
-                    onBoardingCubit.navigateToLogin(context);
+                    navigateToLogin(context);
                   } else {
                     context.read<OnBoardingCubit>().nextPage();
                   }
                 },
                 index: state.index,
                 goToRegister: () {
-                  onBoardingCubit.navigateToLogin(context);
+                  navigateToLogin(context);
                 },
                 skip: () {
-                  onBoardingCubit.navigateToLogin(context);
+                  navigateToLogin(context);
                 },
               ),
               SizedBox(height: 5.h),
@@ -93,6 +93,19 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
           );
         },
       ),
+    );
+  }
+  navigateToLogin(BuildContext context) async {
+    await Future.delayed(
+      const Duration(milliseconds: 300),
+          () {
+        AuthDialog(
+          context,
+          LoginView(
+          ),
+          onValue: (_) {},
+        );
+      },
     );
   }
 }
