@@ -7,11 +7,6 @@ import 'package:wonder_shop/Features/products/data/dataSources/productsRemoteDat
 import 'package:wonder_shop/Features/products/data/repos/productsRepoImp.dart';
 
 import '../../../Features/auth/data/dataSources/loginLocalDataSource.dart';
-import '../../../Features/home/data/data_sources/home_local_data_source.dart';
-import '../../../Features/home/data/data_sources/home_remote_data_source.dart';
-import '../../../Features/home/data/repos/home_repo_impl.dart';
-// import '../../../Features/login/data/data_sources/loginLocalDataSource.dart';
-// import '../../../Features/login/data/repos/loginRepoImpl.dart';
 import '../api_service.dart';
 
 final getIt = GetIt.instance;
@@ -20,14 +15,6 @@ void setupServiceLocator() {
   getIt.registerSingleton<ApiService>(
     ApiService(
       Dio(),
-    ),
-  );
-  getIt.registerSingleton<HomeRepoImpl>(
-    HomeRepoImpl(
-      homeLocalDataSource: HomeLocalDataSourceImpl(),
-      homeRemoteDataSource: HomeRemoteDataSourceImpl(
-        getIt.get<ApiService>(),
-      ),
     ),
   );
   getIt.registerSingleton<LoginRepositoryImpl>(

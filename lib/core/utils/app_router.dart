@@ -1,7 +1,4 @@
 import 'package:wonder_shop/Features/categories/presention/views/categoriesView.dart';
-import 'package:wonder_shop/Features/home/presentation/views/home_view.dart';
-import 'package:wonder_shop/Features/products/presention/views/widgets/productsViewBody.dart';
-import 'package:wonder_shop/Features/search/presentation/views/search_view.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../Features/Splash/presentation/views/splashView.dart';
@@ -22,14 +19,6 @@ abstract class AppRouter {
       GoRoute(
         path: '/kkkk',
         builder: (context, state) => const SplashView(),
-      ),
-      GoRoute(
-        path: kSearchView,
-        builder: (context, state) => const SearchView(),
-      ),
-      GoRoute(
-        path: kHomeView,
-        builder: (context, state) => const HomeView(),
       ),
       GoRoute(
         path: kOnBoardingView,
