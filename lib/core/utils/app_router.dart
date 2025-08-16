@@ -20,8 +20,16 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: kOnBoardingView,
-        builder: (context, state) => const OnBoarding(),
+        builder: (context, state) {
+          final navigateHereAfterLogout =
+          state.extra is bool ? state.extra as bool : false;
+
+          return OnBoarding(
+            isNavigateHereAfterLogout: navigateHereAfterLogout,
+          );
+        },
       ),
+
       // GoRoute(
       //   path: kCategoriesView,
       //   builder: (context, state) => const CategoriesView(),

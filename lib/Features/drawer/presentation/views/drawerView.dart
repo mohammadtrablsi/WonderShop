@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 import 'package:wonder_shop/Features/drawer/presentation/views/widgets/buttonInDrawer.dart';
 import 'package:wonder_shop/Features/drawer/presentation/views/widgets/rowInDrawer.dart';
+import 'package:wonder_shop/core/utils/app_router.dart';
 import 'package:wonder_shop/core/utils/functions/appAlert.dart';
 import 'package:wonder_shop/core/utils/styles.dart';
 
@@ -105,7 +107,9 @@ class _DrawerViewState extends State<DrawerView> {
                         currentIndex=index;
                       });
                       if(index==5){
-                        appAlert(context, 'Are you sure you want to logout?', (){});
+                        appAlert(context, 'Are you sure you want to logout?', (){
+                          context.go(AppRouter.kOnBoardingView, extra: true);
+                        });
                       }
                     },
                   );

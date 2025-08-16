@@ -12,8 +12,8 @@ import 'animatedPoints.dart';
 import 'onBoardingButtonPart.dart';
 
 class OnBoardingBody extends StatefulWidget {
-  const OnBoardingBody({super.key});
-
+  const OnBoardingBody({super.key,this.isNavigateHereAfterLogout=false});
+  final bool isNavigateHereAfterLogout;
   @override
   State<OnBoardingBody> createState() => _OnBoardingBodyState();
 }
@@ -23,9 +23,16 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
 
   @override
   void initState() {
-    _pageController = PageController();
     super.initState();
+    _pageController = PageController();
+
+    if (widget.isNavigateHereAfterLogout) {
+      final cubit = context.read<OnBoardingCubit>();
+      cubit.navigateToLogin(context);
+      cubit.changePage(2);
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {

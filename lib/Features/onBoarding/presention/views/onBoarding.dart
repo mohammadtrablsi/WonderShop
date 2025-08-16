@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import '../manger/onBoardingCubit.dart';
 
 class OnBoarding extends StatelessWidget {
-  const OnBoarding({super.key});
+  const OnBoarding({super.key, this.isNavigateHereAfterLogout=false});
+  final bool isNavigateHereAfterLogout;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class OnBoarding extends StatelessWidget {
           return OnBoardingCubit(
           );
         },
-        child: OnBoardingBody(),
+        child: OnBoardingBody(isNavigateHereAfterLogout:isNavigateHereAfterLogout),
       ),
     );
 }
