@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wonder_shop/Features/categories/presention/views/manger/categoriesCubit.dart';
+import 'package:wonder_shop/core/utils/app_router.dart';
 
 import 'categoriesAppBar.dart';
 import 'categoriesList.dart';
@@ -20,12 +22,7 @@ class CategoriesViewBody extends StatelessWidget {
   };
 
   void goToCategoryProducts(BuildContext context, String category) {
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (_) => const ProductsPage(),
-    //   ),
-    // );
+    context.push(AppRouter.kProductsView);
   }
 
   @override

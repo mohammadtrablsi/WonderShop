@@ -1,10 +1,12 @@
 import 'package:wonder_shop/Features/categories/presention/views/categoriesView.dart';
 import 'package:wonder_shop/Features/home/presentation/views/home_view.dart';
+import 'package:wonder_shop/Features/products/presention/views/widgets/productsViewBody.dart';
 import 'package:wonder_shop/Features/search/presentation/views/search_view.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../Features/Splash/presentation/views/splashView.dart';
 import '../../Features/onBoarding/presention/views/onBoarding.dart';
+import '../../Features/products/presention/views/productsView.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
@@ -13,6 +15,7 @@ abstract class AppRouter {
   static const kLogin = '/loginView';
   static const kOnBoardingView = '/onBoarding';
   static const kCategoriesView = '/categoriesView';
+  static const kProductsView = '/productsView';
 
   static final router = GoRouter(
     routes: [
@@ -35,6 +38,10 @@ abstract class AppRouter {
       GoRoute(
         path: kCategoriesView,
         builder: (context, state) => const CategoriesView(),
+      ),
+      GoRoute(
+        path: kProductsView,
+        builder: (context, state) => const ProductsView(),
       ),
       GoRoute(
         path: '/',
