@@ -8,7 +8,9 @@ import '../../domain/useCases/viewCategoriesUseCase.dart';
 import 'manger/categoriesCubit.dart';
 
 class CategoriesView extends StatelessWidget {
-  const CategoriesView({super.key});
+  const CategoriesView({super.key, required this.isDrawerOpen, this.onPressed});
+  final bool isDrawerOpen;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class CategoriesView extends StatelessWidget {
           ),
         )..viewCategories();
       },
-      child: const CategoriesViewBody(),
+      child:  CategoriesViewBody(isDrawerOpen: isDrawerOpen,onPressed:onPressed ,),
     );
   }
 }

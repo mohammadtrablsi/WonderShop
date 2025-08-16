@@ -9,7 +9,9 @@ import 'categoriesAppBar.dart';
 import 'categoriesList.dart';
 
 class CategoriesViewBody extends StatelessWidget {
-  const CategoriesViewBody({super.key});
+  const CategoriesViewBody({super.key, required this.isDrawerOpen,required this.onPressed});
+  final bool isDrawerOpen;
+  final void Function()? onPressed;
 
   static const Map<String, String> categoryImages = {
     "electronics":
@@ -33,7 +35,7 @@ class CategoriesViewBody extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const CategoriesAppBar(title: 'WonderShop'),
+            CategoriesAppBar(title: 'WonderShop', openDrawerIcon:  isDrawerOpen?Icons.arrow_forward_ios : Icons.menu,onPressed:onPressed,),
 
             const SizedBox(height: 12),
 

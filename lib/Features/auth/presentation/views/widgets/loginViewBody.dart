@@ -74,7 +74,7 @@ class LoginViewBody extends StatelessWidget {
                   listener: (context, state) async {
                     if (state is LoginSuccess) {
                             appToast(context, 'login successful');
-                            context.go(AppRouter.kCategoriesView); // push replacement
+                            context.go(AppRouter.kDrawerStackView); // push replacement
                     } else if (state is LoginFailure) {
                       appToast(context, state.message);
                     }

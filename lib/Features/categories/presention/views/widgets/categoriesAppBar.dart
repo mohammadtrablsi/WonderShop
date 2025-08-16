@@ -4,8 +4,10 @@ import '../../../../../core/utils/styles.dart';
 
 class CategoriesAppBar extends StatelessWidget {
   final String title;
+  final IconData openDrawerIcon;
+  final void Function()? onPressed;
 
-  const CategoriesAppBar({super.key, required this.title});
+  const CategoriesAppBar({super.key, required this.title, required this.openDrawerIcon,required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +34,13 @@ class CategoriesAppBar extends StatelessWidget {
               color: Styles.mainColor,
             ),
           ),
+          // IconButton(
+          //   icon:  Icon(Icons.notifications_none_outlined, color: Styles.mainColor),
+          //   onPressed: () {},
+          // ),
           IconButton(
-            icon:  Icon(Icons.notifications_none_outlined, color: Styles.mainColor),
-            onPressed: () {},
+            icon:  Icon(openDrawerIcon, color: Styles.mainColor),
+            onPressed:onPressed,
           ),
         ],
       ),
