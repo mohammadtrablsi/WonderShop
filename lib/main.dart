@@ -15,7 +15,12 @@ import 'core/utils/functions/setup_service_locator.dart';
 
 void main() async {
   await Hive.initFlutter();
+  // Hive.registerAdapter(BookEntityAdapter());
+  setupServiceLocator();
+  // await Hive.openBox<BookEntity>(kFeaturedBox);
+  // await Hive.openBox<BookEntity>(kNewestBox);
   Bloc.observer = SimpleBlocObserver();
+  // ✅ Create local data source
   var dio=Dio();
   final apiService=ApiService(dio);
   final localDataSource = LoginLocalDataSourceImpl(apiService);

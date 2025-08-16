@@ -1,11 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:wonder_shop/Features/products/presention/views/manger/prodcutsState.dart';
 import 'package:wonder_shop/Features/products/presention/views/manger/productsCubit.dart';
 import 'package:wonder_shop/Features/products/presention/views/widgets/productCard.dart';
-import 'package:wonder_shop/core/utils/app_router.dart';
 
 
 class ProductsViewBody extends StatelessWidget {
@@ -86,7 +84,7 @@ class ProductsViewBody extends StatelessWidget {
                           final product = state.products[index];
                           return ProductCard(
                             onTap: () {
-                              context.push('${AppRouter.kProductDetailsView}/${product.id}/${product.id}');
+                              // Navigate to details page
                             }, product: product,
                           );
                         },

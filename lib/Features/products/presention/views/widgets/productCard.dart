@@ -49,13 +49,16 @@ class ProductCard extends StatelessWidget {
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16),
                     ),
-                    child: AspectRatio(
-                      aspectRatio: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.network(
-                          product.image,
-                          fit: BoxFit.contain,
+                    child: Hero(
+                      tag: product.id.toString(),
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.network(
+                            product.image,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
