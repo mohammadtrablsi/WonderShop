@@ -1,5 +1,6 @@
 // presentation/widgets/product_info.dart
 import 'package:flutter/material.dart';
+import '../../../../../core/utils/styles.dart';
 import '../../../domain/entites/productDetailsEntity.dart';
 
 class ProductDetailsInfo extends StatelessWidget {
@@ -23,10 +24,10 @@ class ProductDetailsInfo extends StatelessWidget {
             ),
             child: Text(
               product.category.toUpperCase(),
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: Color(0xFFC7164F),
+                color: Styles.mainColor,
               ),
             ),
           ),

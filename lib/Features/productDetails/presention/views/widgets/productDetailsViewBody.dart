@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wonder_shop/Features/productDetails/presention/views/widgets/productDetailsImage.dart';
 import 'package:wonder_shop/Features/productDetails/presention/views/widgets/productDetailsInfo.dart';
+import 'package:wonder_shop/core/utils/styles.dart';
 
+import '../../../../../core/utils/functions/lottieStatusRequest.dart';
 import '../manger/prodcutDetailsState.dart';
 import '../manger/productDetailsCubit.dart';
 import 'ProductDetailsBottomBar.dart';
@@ -16,10 +18,11 @@ class ProductDetailsViewBody extends StatelessWidget {
     return BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
       builder: (context, state) {
         if (state is ProductDetailsLoading) {
-          return const Scaffold(body: Center(child: CircularProgressIndicator()));
+          return Scaffold(backgroundColor: Styles.customWhite,body: Center(child: lottieStatusRequest(StatusRequest.loading)));
         } else if (state is ProductDetailsLoaded) {
           final product = state.product;
           return Scaffold(
+            backgroundColor: Styles.customWhite,
             body: SafeArea(
               child: Column(
                 children: [

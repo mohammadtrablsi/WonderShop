@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:wonder_shop/Features/categories/presention/views/manger/categoriesCubit.dart';
 import 'package:wonder_shop/core/utils/app_router.dart';
 
+import '../../../../../core/utils/functions/lottieStatusRequest.dart';
 import 'categoriesAppBar.dart';
 import 'categoriesList.dart';
 
@@ -28,10 +29,11 @@ class CategoriesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
-            const CategoriesAppBar(title: 'Categories'),
+            const CategoriesAppBar(title: 'WonderShop'),
 
             const SizedBox(height: 12),
 
@@ -40,7 +42,7 @@ class CategoriesViewBody extends StatelessWidget {
               child: BlocBuilder<CategoriesCubit, CategoriesState>(
                 builder: (context, state) {
                   if (state is CategoriesLoading) {
-                    return const Center(child: CircularProgressIndicator());
+                    return  Center(child: lottieStatusRequest(StatusRequest.loading));
                   } else if (state is CategoriesLoaded) {
                     return CategoriesList(
                       categories: state.categories,

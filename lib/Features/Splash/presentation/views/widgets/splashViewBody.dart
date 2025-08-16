@@ -139,14 +139,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
           children: [
             SpinKitRing(
               color: Styles.mainColor,
-              size: 108.0,
+              size: 120.0,
               lineWidth: 4,
             ),
             Transform.scale(
               scale: _animation.value,
               child: Container(
-                width: 90,
-                height: 90,
+                width: 100,
+                height: 100,
                 decoration: BoxDecoration(
                   color: Styles.mainColor,
                   borderRadius: BorderRadius.circular(100),
@@ -157,8 +157,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
               tag: "logo",
               child: Image.asset(
                 AssetsData.logo,
-                height: 75,
-                width: 75,
+                height: 145,
+                width: 145,
               ),
             ),
           ],

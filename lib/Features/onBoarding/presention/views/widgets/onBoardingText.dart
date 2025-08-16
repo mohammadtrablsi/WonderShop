@@ -14,7 +14,7 @@ class OnBoardingText extends StatelessWidget {
         TypewriterAnimatedText(
           text,
           textAlign: TextAlign.center,
-          textStyle: Styles.textStyle19Grey,
+          textStyle: Styles.textStyle18Grey,
         ),
       ],
     );

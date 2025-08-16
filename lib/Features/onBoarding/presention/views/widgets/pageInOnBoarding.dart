@@ -25,7 +25,10 @@ class PageInOnBoarding extends StatelessWidget {
           SizedBox(height: 15.h),
           OnBoardingImage(image: image, height: heightOfImage),
           SizedBox(height: 10.h),
-          OnBoardingText(text: text),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 3.w),
+            child: OnBoardingText(text: text),
+          ),
         ],
       ),
     );

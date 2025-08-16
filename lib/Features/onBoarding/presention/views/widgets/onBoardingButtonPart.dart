@@ -28,7 +28,7 @@ class OnBoardingButtonsPart extends StatelessWidget {
 
   Widget _buildStartButton() {
     return ButtonInOnBoarding(
-      text: "ابدأ الان",
+      text: "start now",
       onPressed: goToRegister,
       isChildText: true,
       paddingVertical: 4.w,
@@ -42,7 +42,7 @@ class OnBoardingButtonsPart extends StatelessWidget {
     return Row(
       children: [
         ButtonInOnBoarding(
-          text: "تخطي",
+          text: "skip",
           onPressed: skip,
           isChildText: true,
           paddingVertical: 4.w,
@@ -51,7 +51,7 @@ class OnBoardingButtonsPart extends StatelessWidget {
         ),
         const Spacer(),
         ButtonInOnBoarding(
-          text: "التالي",
+          text:"next",
           onPressed: transport,
           isChildText: false,
           paddingVertical: 3.3.w,

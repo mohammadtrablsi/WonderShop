@@ -26,14 +26,14 @@ class CategoriesAppBar extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: Color(0xFFC7164F),
+              color: Styles.mainColor,
             ),
           ),
           IconButton(
-            icon:  Icon(Icons.favorite_border, color: Styles.mainColor),
+            icon:  Icon(Icons.notifications_none_outlined, color: Styles.mainColor),
             onPressed: () {},
           ),
         ],

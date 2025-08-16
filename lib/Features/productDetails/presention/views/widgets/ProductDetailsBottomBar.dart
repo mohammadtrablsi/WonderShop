@@ -1,5 +1,6 @@
 // presentation/widgets/product_bottom_bar.dart
 import 'package:flutter/material.dart';
+import 'package:wonder_shop/core/utils/styles.dart';
 import '../../../domain/entites/productDetailsEntity.dart';
 
 class ProductDetailsBottomBar extends StatelessWidget {
@@ -20,10 +21,10 @@ class ProductDetailsBottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("\$${product.price}", style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xFFC7164F))),
+          Text("\$${product.price}", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Styles.mainColor)),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFC7164F),
+              backgroundColor: Styles.mainColor,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             ),

@@ -5,6 +5,8 @@ import 'package:wonder_shop/Features/products/presention/views/manger/prodcutsSt
 import 'package:wonder_shop/Features/products/presention/views/manger/productsCubit.dart';
 import 'package:wonder_shop/Features/products/presention/views/widgets/productCard.dart';
 
+import '../../../../../core/utils/functions/lottieStatusRequest.dart';
+
 
 class ProductsViewBody extends StatelessWidget {
   const ProductsViewBody({super.key});
@@ -23,7 +25,7 @@ class ProductsViewBody extends StatelessWidget {
           },
         ),
         title: const Text(
-          "Wonder Shop",
+          "WonderShop",
           style: TextStyle(
             fontSize: 26,
             fontWeight: FontWeight.bold,
@@ -67,7 +69,7 @@ class ProductsViewBody extends StatelessWidget {
               child: BlocBuilder<ProductsCubit, ProductsState>(
                 builder: (context, state) {
                   if (state is ProductsLoading) {
-                    return const Center(child: CircularProgressIndicator());
+                    return Center(child: lottieStatusRequest(StatusRequest.loading));;
                   } else if (state is ProductsLoaded) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),

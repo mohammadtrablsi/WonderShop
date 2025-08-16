@@ -32,62 +32,59 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
     final onBoardingCubit = context.read<OnBoardingCubit>();
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Directionality(
-        textDirection: TextDirection.rtl,
-        child: BlocConsumer<OnBoardingCubit, OnBoardingState>(
-          listener: (context, state) {
-            _pageController.animateToPage(
-              state.index,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-            );
-          },
-          builder: (context, state) {
-            return Column(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: PageView.builder(
-                    controller: _pageController,
-                    onPageChanged: (value) {
-                      context.read<OnBoardingCubit>().changePage(value);
-                    },
-                    itemCount: onBoardingPages.length,
-                    itemBuilder: (context, index) {
-                      final page = onBoardingPages[index];
-                      return PageInOnBoarding(
-                        image: page['image'],
-                        text: page['text'],
-                        heightOfImage: page['heightOfImage'],
-                      );
-                    },
-                  ),
-                ),
-                SizedBox(height: 2.h),
-                AnimatedPoints(indexPage: state.index),
-                SizedBox(height: 7.h),
-                OnBoardingButtonsPart(
-                  text: 'استمر',
-                  transport: () async {
-                    if (state.index == 2) {
-                      onBoardingCubit.navigateToLogin(context);
-                    } else {
-                      context.read<OnBoardingCubit>().nextPage();
-                    }
+      body: BlocConsumer<OnBoardingCubit, OnBoardingState>(
+        listener: (context, state) {
+          _pageController.animateToPage(
+            state.index,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+        },
+        builder: (context, state) {
+          return Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: PageView.builder(
+                  controller: _pageController,
+                  onPageChanged: (value) {
+                    context.read<OnBoardingCubit>().changePage(value);
                   },
-                  index: state.index,
-                  goToRegister: () {
+                  itemCount: onBoardingPages.length,
+                  itemBuilder: (context, index) {
+                    final page = onBoardingPages[index];
+                    return PageInOnBoarding(
+                      image: page['image'],
+                      text: page['text'],
+                      heightOfImage: page['heightOfImage'],
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: 2.h),
+              AnimatedPoints(indexPage: state.index),
+              SizedBox(height: 7.h),
+              OnBoardingButtonsPart(
+                text: 'استمر',
+                transport: () async {
+                  if (state.index == 2) {
                     onBoardingCubit.navigateToLogin(context);
-                  },
-                  skip: () {
-                    context.read<OnBoardingCubit>().skipToLastPage();
-                  },
-                ),
-                SizedBox(height: 5.h),
-              ],
-            );
-          },
-        ),
+                  } else {
+                    context.read<OnBoardingCubit>().nextPage();
+                  }
+                },
+                index: state.index,
+                goToRegister: () {
+                  onBoardingCubit.navigateToLogin(context);
+                },
+                skip: () {
+                  onBoardingCubit.navigateToLogin(context);
+                },
+              ),
+              SizedBox(height: 5.h),
+            ],
+          );
+        },
       ),
     );
   }
