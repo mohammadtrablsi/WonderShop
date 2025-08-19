@@ -3,7 +3,7 @@ class AssetsData {
   static const baseLottieUrl = 'assets/lotties';
 
   //logo
-  static const logo = '$baseImageUrl/logo.png';
+  static const logo = '$baseImageUrl/Logo.png';
   //drawer
   static const personImage = '$baseImageUrl/personImage.png';
   //onBoarding Feature

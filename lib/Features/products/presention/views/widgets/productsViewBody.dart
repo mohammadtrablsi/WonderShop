@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wonder_shop/Features/products/presention/views/widgets/filterSection.dart';
 import 'package:wonder_shop/Features/products/presention/views/widgets/productCard.dart';
 import 'package:wonder_shop/core/utils/appRouter.dart';
 
 import '../../../../../core/utils/functions/lottieStatusRequest.dart';
 import '../../manager/prodcutsState.dart';
 import '../../manager/productsCubit.dart';
-
 
 class ProductsViewBody extends StatelessWidget {
   const ProductsViewBody({super.key});
@@ -21,7 +20,8 @@ class ProductsViewBody extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_sharp, color: Color(0xFFC7164F)),
+          icon: const Icon(Icons.arrow_back_ios_new_sharp,
+              color: Color(0xFFC7164F)),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -40,7 +40,8 @@ class ProductsViewBody extends StatelessWidget {
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.notifications_none_rounded, color: Colors.black87),
+            icon: const Icon(Icons.notifications_none_rounded,
+                color: Colors.black87),
             onPressed: () {},
           ),
         ],
@@ -67,18 +68,25 @@ class ProductsViewBody extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
+            BlocBuilder<ProductsCubit, ProductsState>(
+              builder: (context, state) {
+                return const FilterSection();
+              },
+            ),
+            const SizedBox(height: 12),
             Expanded(
               child: BlocBuilder<ProductsCubit, ProductsState>(
                 builder: (context, state) {
                   if (state is ProductsLoading) {
-                    return Center(child: lottieStatusRequest(StatusRequest.loading));
+                    return Center(
+                        child: lottieStatusRequest(StatusRequest.loading));
                   } else if (state is ProductsLoaded) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: GridView.builder(
                         itemCount: state.products.length,
                         gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 12,
                           mainAxisSpacing: 12,
@@ -88,8 +96,11 @@ class ProductsViewBody extends StatelessWidget {
                           final product = state.products[index];
                           return ProductCard(
                             onTap: () {
-                              context.push('${AppRouter.kProductDetailsView}/${product.id}/${product.id}');
-                            }, product: product,
+                              context.push(
+                                '${AppRouter.kProductDetailsView}/${product.id}/${product.id}',
+                              );
+                            },
+                            product: product,
                           );
                         },
                       ),
